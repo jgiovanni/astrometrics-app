@@ -24,19 +24,6 @@ const defaultNavigationOptions = {
     )
 };
 
-// const Home = createStackNavigator({
-//     HomeScreen: {
-//         screen: HomeScreen,
-//         path: 'home',
-//         navigationOptions: ({ navigation }) => ({
-//             title: 'Home',
-//         }),
-//     }
-// }, {
-//     headerMode: 'float',
-//     navigationOptions: defaultNavigationOptions
-// });
-
 const AppContainer = createAppContainer(
     createAnimatedSwitchNavigator(
         {

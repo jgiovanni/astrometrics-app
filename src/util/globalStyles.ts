@@ -9,12 +9,12 @@ const globalStyles = StyleSheet.create({
   screenContainer: {
     display: "flex",
     flex: 1,
-    paddingTop: 20,
-    paddingLeft: 20,
-    paddingRight: 20,
-    paddingBottom: 20,
+    paddingTop: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
+    paddingBottom: 10,
     // margin: 20,
-    backgroundColor: 'rgba(0, 0, 0, .66)'
+    backgroundColor: 'rgba(0, 0, 0, .33)'
   },
   video: {
     width,
@@ -22,6 +22,22 @@ const globalStyles = StyleSheet.create({
     position: 'absolute',
     top: 0,
     left: 0,
+  },
+  solarSystem: {
+    position: 'relative',
+    // backgroundColor: 'rgba(255, 0, 0, .33)'
+  },
+  planetContainer: {
+    position: 'absolute',
+    width: '100',
+    height: '100',
+    // backgroundColor: 'rgba(0, 255, 0, .33)',
+  },
+  planet: {
+    position: 'absolute',
+  },
+  planetTrack: {
+
   }
 });
 
