@@ -14,7 +14,7 @@ const globalStyles = StyleSheet.create({
     paddingRight: 10,
     paddingBottom: 10,
     // margin: 20,
-    backgroundColor: 'rgba(0, 0, 0, .33)'
+    backgroundColor: 'rgba(0, 0, 0, .76)'
   },
   video: {
     width,

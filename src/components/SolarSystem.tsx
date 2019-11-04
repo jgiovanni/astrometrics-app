@@ -18,7 +18,7 @@ export default function SolarSystem ({data}: ISolarSystem) {
     useEffect(
         () => {
             if (Object.keys(data).length > 0) {
-                console.log('data: ', data);
+                // console.log('data: ', data);
             }
         },
         [data]
@@ -30,9 +30,9 @@ export default function SolarSystem ({data}: ISolarSystem) {
             {
                 Object.keys(data).map(key => {
                     const planet = data[key];
-                    console.log(planet, key);
+                    // console.log(planet, key);
                     return (
-                        <Planet key={key} {...planetOptions[key]} {...planet} />
+                        <Planet key={key} name={key} {...planetOptions[key]} {...planet} />
                     )
                 })
             }

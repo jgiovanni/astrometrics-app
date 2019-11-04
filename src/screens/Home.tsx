@@ -6,12 +6,12 @@ import globalStyles from "../util/globalStyles";
 import Flex from "../components/Flex";
 import { ScreenOrientation } from "expo";
 import SolarSystem from "../components/SolarSystem";
+import ParticleAPI from "../util/particleAPI";
 
 const Astronomy = require("astronomy-engine/astronomy.js");
-// import Astronomy from 'astronomy-engine'
+const particleAPI = new ParticleAPI();
 const minimumDate = new Date("1700-11-29T14:17:31.000Z");
 const maximumDate = new Date("2200-11-29T14:17:31.000Z");
-
 const planets = {
   inner: ["Mercury", "Venus", "Earth", "Mars"],
   outer: ["Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"],
@@ -23,15 +23,7 @@ function HomeScreen() {
   const [chosenDate, setChosenDate] = useState(new Date());
   const [solarSystem, setSolarSystem] = useState({});
 
-  function cartesian2Polar(x, y) {
-    const distance = Math.sqrt(x * x + y * y);
-    const radians = Math.atan2(y, x); //This takes y first
-    const polarCoor = { distance: distance, radians: radians };
-    return polarCoor;
-  }
-
   const handleDateChange = (val = new Date()) => {
-    // console.log(val);
     setChosenDate(val);
 
     let planetPositions = {};
@@ -44,6 +36,8 @@ function HomeScreen() {
     }
     setSolarSystem(planetPositions);
     // send data to photon API
+    particleAPI.sendData('newPositions', JSON.stringify(planetPositions))
+
   };
 
   useEffect(() => {

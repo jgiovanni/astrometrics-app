@@ -42,7 +42,7 @@ async function changeScreenOrientation() {
 export default function App() {
   const [isReady, setReady] = useState(false);
   useKeepAwake();
-  changeScreenOrientation();
+  // changeScreenOrientation();
 
   async function _cacheResourcesAsync() {
     const media = [

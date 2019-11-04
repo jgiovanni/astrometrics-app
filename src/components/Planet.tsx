@@ -4,6 +4,7 @@ import React, {useEffect, useState} from "react";
 import { View } from "react-native";
 import globalStyles from "../util/globalStyles";
 import Flex from "./Flex";
+import {Text} from "react-native-paper";
 
 const padding = 5;
 const planetSize = 15;
@@ -25,7 +26,7 @@ const {
     SpringUtils,
 } = Animated;
 
-export default function Mercury({ size, color, azimuth }) {
+export default function Mercury({ name, size, color, azimuth }) {
     const area = size + (padding * 2);
     const center = area / 2;
     const currentRotation = new Animated.Value(0);
@@ -91,6 +92,7 @@ export default function Mercury({ size, color, azimuth }) {
         <Svg height={area + (planetSize * 2)} width={area + (planetSize * 2)}>
           <Circle cx={area/2 + planetSize / 2} cy={planetSize} r={planetSize} fill={color} />
         </Svg>
+          <Text style={{ position: 'absolute', top: 0, left: '55%' }}>{name}</Text>
       </Animated.View>
     </Flex>
   );
